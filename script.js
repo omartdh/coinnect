@@ -7,6 +7,7 @@ $("document").ready(function(){
         
       }).then(function (response) {
             console.log(response)
+            console.log("testing")
 
             // const btName = response[0].name
             // console.log(btName)
