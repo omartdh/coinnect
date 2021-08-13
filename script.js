@@ -1,5 +1,5 @@
 $("document").ready(function(){
-    console.log("test1")
+    
 
     $.ajax({
         url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -7,6 +7,7 @@ $("document").ready(function(){
         
       }).then(function (response) {
             console.log(response)
+            console.log("First Commit")
 
             // const btName = response[0].name
             // console.log(btName)
