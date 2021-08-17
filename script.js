@@ -7,18 +7,34 @@ $("document").ready(function(){
         
       }).then(function (response) {
             console.log(response)
-            console.log("First Commit")
+            //console.log("First Commit")
 
-            // const btName = response[0].name
-            // console.log(btName)
+            var formatter = new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                
+                });
 
-            // const price = response[0].current_price
+            var tabbleHTML = '<tr class="coinItems"> <th> '+"#"+'</th>'+'<th>'+"Coin"+'</th>';
+            $(function() {
+                  $.each(response, function(i, item) {
 
-            // const n2 = document.getElementById("n2");
-            // n2.textContent = price;
+                        i++;
+                        tabbleHTML += '<tr  class="coinItems"><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td></tr>';
+            if (i === 100) {
+                  return false;
+              }
+        });
 
-            // const n1 = document.getElementById('n1');
-            // n1.textContent = btName
+        $('#coinsListTable').append(tabbleHTML);
+        
+
+        
+
+
+            });
+
+
 
       })
 
