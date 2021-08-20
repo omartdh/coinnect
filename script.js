@@ -6,8 +6,8 @@ $("document").ready(function(){
         method: "GET",
         
       }).then(function (response) {
-            // console.log(response)
-            // console.log("First Log")
+            console.log(response)
+            console.log("testing branch")
 
             var formatter = new Intl.NumberFormat('en-US', {
                   style: 'currency',
