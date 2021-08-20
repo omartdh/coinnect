@@ -16,27 +16,37 @@
   <main>
     <section class="sort-option">
       <button class="sort-rank" id="coin_rank_btn">#</button>
-      <button class="sort-name">Coin</button>
-      <button class="sort-price">Price</button>
-      <button class="sort-24h">24h</button>
-      <button class="sort-24h-Volume">24h Volume</button>
-      <button class="sort-marketCap">Market Cap</button>
+      <button class="sort-name" id="coin_name_btn">Coin</button>
+      <button class="sort-price" id="coin_price_btn">Price</button>
+      <button class="sort-24h" id="coin_24h_btn">24h</button>
+      <button class="sort-24h-Volume" id="coin_24h_volume_btn">24h Volume</button>
+      <button class="sort-marketCap" id="coin_marketCap_btn">Market Cap</button>
     </section>
-    <section class="list-headers">
+    <!-- <section class="list-headers">
       <div class="header-rank">#</div>
       <div class="header-coin">Coin</div>
       <div class="header-price">Price</div>
       <div class="header-24h">24h</div>
       <div class="header-24h-volume">24h Volume</div>
       <div class="header-Market-Cap">Market Cap</div>
-    </section>
+    </section> -->
     <section class="list">
 
     </section>
   </main>
       <dive id="coinsListDiv">
         
-          <table id="coinsListTable">
+          <table id="coinsListTable" class="coinTable">
+            <header>
+              <tr>
+                <th> # </th>
+                <th> Coin </th>
+                <th> Price </th>
+                <th> 24h </th>
+                <th> 24h Volume </th>
+                <th> Market Cap </th>
+             </tr>
+          </header> 
 
         </table>
 
