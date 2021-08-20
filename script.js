@@ -12,7 +12,6 @@ $("document").ready(function(){
       let coinName = "";
       document.getElementById("search-coin").addEventListener("click", function(e){
             e.preventDefault()
-
             initial();
 
             coinName = $("#search-input").val().trim();
