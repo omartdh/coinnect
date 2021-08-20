@@ -20,14 +20,16 @@ $("document").ready(function(){
             function displayList(response){
                  $('#coinsListTable').empty()
                  
-                  var tabbleHTML = '<tr class="coinItems"> <th> '+"#"+'</th>'+'<th>'+"Coin"+'</th>'+'<th> '+"Price"+'</th>'+'<th>'+"24h"+'</th>'+'<th> '+"24h Volume"+'</th>'+'<th>'+"Market Cap"+'</th>';
+                  // var tabbleHTML = '<tr class="coinItems" > <th> '+"↓"+'</th>'+'<th>'+"Coin"+'</th>'+'<th> '+"Price"+'</th>'+'<th>'+"24h"+'</th>'+'<th> '+"24h Volume"+'</th>'+'<th>'+"Market Cap"+'</th>';
+
+                  var tabbleHTML;
                               $(function() {
                         $.each(response, function(i, item) {
 
                               i++;
                              // tabbleHTML = '<tr><th>'+"x"+'</th><th></th><th></th><th></th><th></th><th></th></tr>'
                          
-                              tabbleHTML += '<tr  class="coinItems"><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td>' + item.price_change_percentage_24h +'\%</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
+                              tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td>' + item.price_change_percentage_24h +'\%</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
                               if (i === 100) {
                                     return false;
                               }
@@ -51,12 +53,23 @@ $("document").ready(function(){
            
             let desc = true;
 
+                  //const rank_th = document.querySelector(".coinTable th")
+                  // console.log($("#coinRankTh").innerText)
+                  // const sort_rank_btn = document.getElementById("coin_rank_btn");
+                 // console.log(sort_rank_btn.innerText)
 
-                  const sort_rank_btn = document.getElementById("coin_rank_btn");
+                 const sort_rank_btn = document.getElementById("coin_rank_btn");
                   sort_rank_btn.addEventListener('click', () => {
                   let coinArray = sort_array_by(response,'market_cap_rank',desc)
                   displayList(coinArray);
+
+                  if(!desc){
+                        sort_rank_btn.innerText="# ▲";
+                  }
+                  else {sort_rank_btn.innerText="# ▼";}
+
                   desc = !desc;
+                  
                       
 
                   });
@@ -66,7 +79,13 @@ $("document").ready(function(){
                   let coinArray = sort_array_by(response, 'name', desc)
                   displayList(coinArray);
 
+                  if(!desc){
+                        sort_name_btn.innerText="Coin ▲";
+                  }
+                  else {sort_name_btn.innerText="Coin ▼";}
+
                   desc =!desc;
+                  
 
                   });
 
@@ -74,8 +93,12 @@ $("document").ready(function(){
                   sort_price_btn.addEventListener('click', () => {
                   let coinArray = sort_array_by(response, 'current_price', desc)
                   displayList(coinArray);
-
+                  if(!desc){
+                        sort_price_btn.innerText="Price ▲";
+                  }
+                  else {sort_price_btn.innerText="Price ▼";}
                   desc =!desc;
+                  //sort_price_btn.innerText="↑";
 
                   });
 
@@ -84,7 +107,12 @@ $("document").ready(function(){
                   let coinArray = sort_array_by(response, 'price_change_percentage_24h', desc)
                   displayList(coinArray);
 
+                  if(!desc){
+                        sort_24h_btn.innerText="24h ▲";
+                  }
+                  else {sort_24h_btn.innerText="24h ▼";}
                   desc =!desc;
+                  
 
                   });
 
@@ -92,8 +120,13 @@ $("document").ready(function(){
                   sort_24h_volume_btn.addEventListener('click', () => {
                         let coinArray = sort_array_by(response, 'total_volume', desc)
                         displayList(coinArray);
+                        if(!desc){
+                              sort_24h_volume_btn.innerText="24h Volume ▲";
+                        }
+                        else {sort_24h_volume_btn.innerText="24h Volume ▼";}
 
                         desc =!desc;
+                        
 
                  
 
@@ -102,8 +135,13 @@ $("document").ready(function(){
                   sort_marketCap_btn.addEventListener('click', ()=> {
                         let coinArray = sort_array_by(response, 'market_cap', desc)
                         displayList(coinArray);
-      
+                        if(!desc){
+                              sort_marketCap_btn.innerText="Market Cap ▲";
+                        }
+                        else {sort_marketCap_btn.innerText="Market Cap ▼";}
+
                         desc =!desc;
+                        
       
                   });
 

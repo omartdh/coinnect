@@ -25,16 +25,19 @@ header h1 {
 }
 main .sort-option {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
 
   width: 100%;
   max-width: 1100px;
 
-  margin: 30px auto;
+  margin: 30px auto 0px;
+  position: sticky;
+  top: 30px;
 }
 
 main .sort-option button {
-  flex: 1 1 33%;
+  flex: 1 1 20%;
+  flex-basis: 10%;
   appearance: none;
 
   background-color: #f3f3f3;
@@ -47,6 +50,10 @@ main .sort-option button {
   margin: 0px 8px;
 
   cursor: pointer;
+  text-align: left;
+
+  /* position: sticky;
+  top: 30px; */
 }
 main .list-headers {
   display: flex;
@@ -62,7 +69,7 @@ main .list-headers {
   text-transform: uppercase;
 }
 main .list {
-  display: block;
+  /* display: block; */
 
   width: 100%;
   max-width: 1100px;
@@ -85,21 +92,21 @@ main .list .list-item {
   border-radius: 8px;
 }
 
-.coinTable {
-  text-align: left;
+.coinTable th {
+  position: sticky;
+  top: 0;
+  background-color: #c7afaf;
+}
 
+#coinsListDiv {
+  display: flex;
   justify-content: space-between;
 
   width: 100%;
   max-width: 1100px;
-  margin: 15px 0px;
-  padding: 0px 15px 400px 0px;
-  text-align: left;
 
-  border: 1px solid #171717;
-  border-radius: 8px;
+  margin: 0px auto 0px;
 }
-
 /* main .list .list-item div:nth-child(2),
 main .list .list-item div:nth-child(3),
 main .list .list-item div:nth-child(3),
@@ -121,7 +128,7 @@ td {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
 }
 
 td,
