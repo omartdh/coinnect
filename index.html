@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <h1>Top 100 Cryptocurrency </h1>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand"><h2>coiNNect</h2></a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <!-- First panel is for handling parameters -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title text-center"><strong><h3 style="color: rgb(57, 109, 168);">Coin Price Tracker</h3></strong></div>
+          </div>
+          <div class="panel-body">
+  
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+  
+              <!-- Here we create the text box for capturing the location data-->
+              <div class="form-group">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 style="color: rgb(57, 109, 168);">Search Coin</h3>
+                    <div></div>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Ex Bitcoin, BTC" aria-label="Search"
+                        id="search-input">
+                      <button class="btn btn-info" type="submit" id="search-coin">Search</button>
+                    </div>
+                    </form>
+                  </div>
+                  <div class="card-body coin">
+                    <div class="card-text" id="coin-name"></div>
+                    <div class="card-text" id="coin-prics"></div>
+                    <div class="card-text" id="market-cap"></div>
+                    <div class="card-text" id="max-supply"></div>
+                    <div class="card-text" id="total-val"></div>
+                  </div>
+                </div>
   </header>
   <main>
     <section class="sort-option">
@@ -22,14 +67,7 @@
       <button class="sort-24h-Volume" id="coin_24h_volume_btn">24h Volume ▲</button>
       <button class="sort-marketCap" id="coin_marketCap_btn">Market Cap ▲</button>
     </section>
-    <!-- <section class="list-headers">
-      <div class="header-rank">#</div>
-      <div class="header-coin">Coin</div>
-      <div class="header-price">Price</div>
-      <div class="header-24h">24h</div>
-      <div class="header-24h-volume">24h Volume</div>
-      <div class="header-Market-Cap">Market Cap</div>
-    </section> -->
+   
     <section class="list">
 
     </section>
@@ -37,16 +75,7 @@
       <dive id="coinsListDiv">
         
           <table id="coinsListTable" class="coinTable">
-            <tr class="coinItems" > 
-              <th>↓</th>
-              <th>Coin</th>
-              <th>Price</th>
-              <th>24h</th>
-              <th>24h sort-24h-Volume</th>
-              <th>Market Cap</th>
-
-            </tr>
-
+           
         </table>
 
       </dive>
