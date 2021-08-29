@@ -9,55 +9,48 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand"><h2>coiNNect</h2></a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-  
-    <div class="row">
-      <div class="col-sm-12">
-        <br>
-        <!-- First panel is for handling parameters -->
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <div class="panel-title text-center"><strong><h3 style="color: rgb(57, 109, 168);">Coin Price Tracker</h3></strong></div>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand"><h2>coiNNect</h2></a>
+    </div>
+  </nav>
+  <div class="search-box">
+    <input class="search-text" type="search" name="" placeholder="Ex Bitcoin, BTC" id="search-input">
+    <!-- <button class="search-btn" type="submit" id="search-coin"> -->  
+    </button>
+    <a class="search-btn" id="search-coin" href="#">
+         <i class="fas fa-search" id="search-icon"></i>
+    </a>
+</div>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div id="coin-logo"></div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div id="coin-prics">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <div id="market-cap">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div id="total-val">
           </div>
-          <div class="panel-body">
-  
-            <!-- Here we create an HTML Form for handling the inputs-->
-            <form role="form">
-  
-              <!-- Here we create the text box for capturing the location data-->
-              <div class="form-group">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 style="color: rgb(57, 109, 168);">Search Coin</h3>
-                    <div></div>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Ex Bitcoin, BTC" aria-label="Search"
-                        id="search-input">
-                      <button class="btn btn-info" type="submit" id="search-coin">Search</button>
-                    </div>
-                    </form>
-                  </div>
-                  <div class="card-body coin">
-                    <div class="card-text" id="coin-name"></div>
-                    <div class="card-text" id="coin-prics"></div>
-                    <div class="card-text" id="market-cap"></div>
-                    <div class="card-text" id="max-supply"></div>
-                    <div class="card-text" id="total-val"></div>
-                  </div>
-                </div>
-  </header>
+        </div>
+
+      </div>
+    </div>
+
   <main>
     <section class="sort-option">
       <button class="sort-rank" id="coin_rank_btn"># ▲</button>

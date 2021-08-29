@@ -2,6 +2,7 @@ $("document").ready(function(){
 
     function initial(){   
           $("#icon").empty();
+          $("#coin-logo").empty();
           $("#coin-name").empty();
           $('#coin-prics').empty();
           $("#market-cap").empty();
@@ -34,14 +35,21 @@ $("document").ready(function(){
                                         let imgURL = coin[i].image;
                                         let coinLogo = $('<img>');
                                         coinLogo.attr("src", imgURL);
-                                        coinLogo.css("width", "88px")
-    
-                                        $('#coin-name').append(coinLogo);
-                                        $('#coin-name').append(name); 
-                                        $('#coin-prics').append($('<h4>').text("Current Price " + coin[i].current_price));
-                                        $('#market-cap').append($('<h4>').text("Market-cap " + coin[i].market_cap));
-                                        $('#max-supply').append($('<h4>').text("Max-supply " + coin[i].max_supply));
-                                        $('#total-val').append($('<h4>').text("Total-val " + coin[i].total_volume));
+                                    //     coinLogo.css("width", "50px")
+                                    if(coin[i].price_change_percentage_24h > 0){
+                                          $('.container').css("background-color", "#1b661b")
+                                          $('.container').css("color", "rgb(208 223 206)")
+                                    } else {
+                                          $('.container').css("background-color", "#b22f3b")
+                                          $('.container').css("color", "rgb(229 203 208)")
+                                    }
+                                        
+                                        $('#coin-logo').append(coinLogo);
+                                        $('#coin-logo').append(name); 
+                                        $('#coin-prics').append($('<div>').text("Current Price: " + coin[i].current_price));
+                                        $('#market-cap').append($('<div>').text("Market-cap: " + coin[i].market_cap));
+                                        $('#max-supply').append($('<div>').text("Max-supply: " + coin[i].max_supply));
+                                        $('#total-val').append($('<div>').text("Total-val: " + coin[i].total_volume));
                                         valid = true;
                             
                                   } else if(i == coin.length-1 && valid == false){
@@ -85,12 +93,12 @@ $("document").ready(function(){
                             i++;
                            // tabbleHTML = '<tr><th>'+"x"+'</th><th></th><th></th><th></th><th></th><th></th></tr>'
                        
-                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td>' + item.price_change_percentage_24h +'\%</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
+                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td id="price24">' + item.price_change_percentage_24h +'%</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
                             if (i === 100) {
                                   return false;
                             }
                             });
-
+                            
                             $('#coinsListTable').append(tabbleHTML);
           
 
