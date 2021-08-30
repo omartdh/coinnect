@@ -6,7 +6,16 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f3f1f1;
+  background: #425b7f;
+  }
+  nav{
+    background-color: #1c355a;
+    font-family: 'Cairo', sans-serif;
+  }
+  #logo{
+    font-size: 35px;
+    text-decoration: none;
+    color: #afcfff;
   }
   .search-box{
   position: absolute;
@@ -14,14 +23,14 @@ body {
   top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #2f3640;
+  background: #1c355a;
   height: 57px;
   border-radius: 40px;
   padding: 9px;
   }
   .search-box:hover > .search-btn{
-  background: white;
-  color: #2c2a2a;
+  background: #afcfff;
+  color: #1c355a;
 
   }
 
@@ -31,12 +40,12 @@ body {
   }
 
   .search-btn{
-  color: #e1d9d9;
+  color: #afcfff;
   float: right;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #2f3640;
+  background: #1c355a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +62,7 @@ body {
   outline: none;
   float: left;
   padding: 0;
-  color: white;
+  color: #afcfff;
   font-size: 16px;
   transition: 0.9s;
   line-height: 40px;
@@ -103,7 +112,7 @@ header h1 {
   text-transform: uppercase;
 }
 
-main .sort-option {
+.sort-option {
   display: flex;
   justify-content: stretch;
 
@@ -118,18 +127,15 @@ main .sort-option button {
   flex: 1 1 20%;
   flex-basis: 10%;
   appearance: none;
-
-  background-color: #f3f3f3;
-
+  background-color: #6588bb;
+  color: #d8dce2;
   border: none;
   border-radius: 8px;
   outline: none;
-
   padding: 15px 0px;
   margin: 0px 8px;
-
   cursor: pointer;
-  text-align: left;
+  text-align: center;
 
   /* position: sticky;
   top: 30px; */
@@ -184,7 +190,7 @@ main .list .list-item {
   width: 100%;
   max-width: 1100px;
 
-  margin: 0px auto 0px;
+  margin: 17px auto 0px;
 }
 /* main .list .list-item div:nth-child(2),
 main .list .list-item div:nth-child(3),
@@ -208,17 +214,26 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  color: #c6d2de;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #6d8fc0;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  /* background-color: #dddddd; */
+}
+
+footer{
+  background-color: #1c355a;
+  color: #afcfff;
+  margin: 40px 0px -17px 0px;
+  padding: 20px;
+  text-align: center;
 }
 
 /* #price24{

@@ -84,28 +84,43 @@ $("document").ready(function(){
           function displayList(response){
                $('#coinsListTable').empty()
                
-                // var tabbleHTML = '<tr class="coinItems" > <th> '+"↓"+'</th>'+'<th>'+"Coin"+'</th>'+'<th> '+"Price"+'</th>'+'<th>'+"24h"+'</th>'+'<th> '+"24h Volume"+'</th>'+'<th>'+"Market Cap"+'</th>';
+            //     var tabbleHTML = '<tr class="coinItems" > <th> '+"↓"+'</th>'+'<th>'+"Coin"+'</th>'+'<th> '+"Price"+'</th>'+'<th>'+"24h"+'</th>'+'<th> '+"24h Volume"+'</th>'+'<th>'+"Market Cap"+'</th>';
 
                 var tabbleHTML;
                             $(function() {
+                                  let price24El = "";
                       $.each(response, function(i, item) {
 
                             i++;
                            // tabbleHTML = '<tr><th>'+"x"+'</th><th></th><th></th><th></th><th></th><th></th></tr>'
                        
-                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td id="price24">' + item.price_change_percentage_24h +'%</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
+                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td id="price24' + i + '">' + item.price_change_percentage_24h +'</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
+
+                            
                             if (i === 100) {
                                   return false;
                             }
-                            });
-                            
-                            $('#coinsListTable').append(tabbleHTML);
-          
 
-          
+                            });
+
+                            $('#coinsListTable').append(tabbleHTML);
+
+                            console.log(response)
+                            for(let i = 1; i < response.length + 1; i++){
+                              price24El = document.getElementById("price24" + i)
+                              if(price24El.innerText > 0){
+                                    price24El.style.color = "#5cc069";
+                              } else {
+                                    price24El.style.color = "#f56e6e";
+                              }
+            
+                            } 
 
 
                 });
+
+      
+                
 
                 //console.log(response)
 
