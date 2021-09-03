@@ -8,6 +8,7 @@ $("document").ready(function(){
           $("#market-cap").empty();
           $("#max-supply").empty();
           $("#total-val").empty();
+          $('#coin-24').empty();
     }
 
     let coinName = "";
@@ -28,28 +29,50 @@ $("document").ready(function(){
 
                             for(let i = 0; i < coin.length; i++){
                                   if(coinName == coin[i].id || coinName == coin[i].symbol){
-                                        console.log(coin[i].id)
                                         const name = coin[i].name;
-                                        console.log(name)
-    
+                                        const price_24 = coin[i].price_change_percentage_24h;
                                         let imgURL = coin[i].image;
                                         let coinLogo = $('<img>');
                                         coinLogo.attr("src", imgURL);
-                                    //     coinLogo.css("width", "50px")
-                                    if(coin[i].price_change_percentage_24h > 0){
-                                          $('.container').css("background-color", "#1b661b")
-                                          $('.container').css("color", "rgb(208 223 206)")
-                                    } else {
-                                          $('.container').css("background-color", "#b22f3b")
-                                          $('.container').css("color", "rgb(229 203 208)")
-                                    }
+                                        coinLogo.css("width", "50px")
+                                        $('.container').css("background-color", "#648fce")
+                                    // if(coin[i].price_change_percentage_24h > 0){
+                                    //       $('.container').css("background-color", "#1b661b")
+                                    //       $('.container').css("color", "rgb(208 223 206)")
+                                    // } else {
+                                    //       $('.container').css("background-color", "#b22f3b")
+                                    //       $('.container').css("color", "rgb(229 203 208)")
+                                    // }
                                         
                                         $('#coin-logo').append(coinLogo);
                                         $('#coin-logo').append(name); 
-                                        $('#coin-prics').append($('<div>').text("Current Price: " + coin[i].current_price));
-                                        $('#market-cap').append($('<div>').text("Market-cap: " + coin[i].market_cap));
+                                        
+                                           if(coin[i].price_change_percentage_24h > 0){
+                                          $('#coin-24').append(price_24 + "% ▲");
+                                          $('#coin-24').css("color", "rgb(42 254 70)")
+                                    } else {
+                                          $('#coin-24').append(price_24 + "% ▼");
+                                          $('#coin-24').css("color", "rgb(194 0 0)")
+                                    }
+
+                                    var formatter = new Intl.NumberFormat('en-US', {
+                                          style: 'currency',
+                                          currency: 'USD',
+                                        
+                                        });
+
+                                    // let pp = formatter.format(coin[i].current_price)
+                                    //     console.log(pp);
+
+
+                                        $('#coin-prics').append($('<div>').text("Current Price: "));
+                                        $('#coin-prics').append($('<div>').text(formatter.format(coin[i].current_price)));
+                                        $('#market-cap').append($('<div>').text("Market-cap: "));
+                                        $('#market-cap').append($('<div>').text(formatter.format(coin[i].market_cap)));
                                         $('#max-supply').append($('<div>').text("Max-supply: " + coin[i].max_supply));
-                                        $('#total-val').append($('<div>').text("Total-val: " + coin[i].total_volume));
+                                        $('#total-val').append($('<div>').text("Total-val: "));
+                                        $('#total-val').append($('<div>').text(formatter.format(coin[i].total_volume)));
+                                        $( "#coin-prics, #market-cap, #total-val" ).css( "border", "1px dashed #062e55" );
                                         valid = true;
                             
                                   } else if(i == coin.length-1 && valid == false){
@@ -87,8 +110,8 @@ $("document").ready(function(){
             //     var tabbleHTML = '<tr class="coinItems" > <th> '+"↓"+'</th>'+'<th>'+"Coin"+'</th>'+'<th> '+"Price"+'</th>'+'<th>'+"24h"+'</th>'+'<th> '+"24h Volume"+'</th>'+'<th>'+"Market Cap"+'</th>';
 
                 var tabbleHTML;
-                            $(function() {
-                                  let price24El = "";
+                   $(function() {
+                              let price24El = "";
                       $.each(response, function(i, item) {
 
                             i++;

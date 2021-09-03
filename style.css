@@ -10,10 +10,11 @@ body {
   }
   nav{
     background-color: #1c355a;
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Cairo', sans-serif; */
   }
   #logo{
-    font-size: 35px;
+    font-size: 40px;
     text-decoration: none;
     color: #afcfff;
   }
@@ -74,32 +75,44 @@ body {
   .container{
     padding: 18px;
     border-radius: 17px;
-    /* background-color: #1b661b; */
+    /* background-color: #648fce; */
     /* border: dashed black; */
     /* color: rgb(165, 216, 159); */
     margin-top: 230px;
     /* text-align: center; */
     width: 53%;
+    color: #062e55;
+    font-family: 'Play', sans-serif;
   }
   #coin-logo{
     /* border-right: solid black; */
-    border-right: solid rgb(202, 188, 188);
+    /* border-right: solid rgb(202, 188, 188); */
+    margin-top: 5px;
     font-size: 27px;
+    text-align: center;
     /* margin-top: 3px; */
   }
   #coin-logo img{
     width: 44px;
-    margin-right: 14px;
+    margin-right: 21px;
+    margin-top: 0px;
+    opacity: 0.85;
   }
-  #coin-prics, #market-cap{
+
+  #coin-24{
+    text-align: center;
+    font-size: 21px;
+    margin: 14px 0px 0px -160%;
+  }
+
+  #coin-prics, #market-cap, #total-val{
     /* background-color: rgb(77, 73, 73); */
     font-size: 18px;
-    border-right: solid rgb(202, 188, 188);
+    /* border: dashed #062e55; */
+    text-align: center;
+    margin-top: 36px;
+    /* border-right: solid rgb(202, 188, 188); */
   }
-  #total-val{
-      /* background-color: rgb(77, 73, 73); */
-      font-size: 18px;
-    }
 
 header h1 {
   color: #130101;
@@ -224,9 +237,9 @@ th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  /* background-color: #dddddd; */
-}
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
 
 footer{
   background-color: #1c355a;
@@ -234,6 +247,12 @@ footer{
   margin: 40px 0px -17px 0px;
   padding: 20px;
   text-align: center;
+}
+
+@media (max-width: 993px) {
+  #coin-24{
+    margin: 23px 0px 0px 0px;
+  }
 }
 
 /* #price24{
