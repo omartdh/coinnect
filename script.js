@@ -1,5 +1,15 @@
 $("document").ready(function(){
 
+      function numFormatter(num) {
+            if(num > 1000000 && num < 1000000000){
+                return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+            } else if(num > 1000000000 && num < 1000000000000){
+                  return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 million 
+            } else if(num < 900000){
+                return num; // if value < 1000, nothing to do
+            }
+        }
+
     function initial(){   
           $("#icon").empty();
           $("#coin-logo").empty();
@@ -16,7 +26,7 @@ $("document").ready(function(){
           e.preventDefault()
           initial();
 
-          coinName = $("#search-input").val().trim();
+          coinName = $("#search-input").val().trim().toLowerCase();
           $.ajax({
                       url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
                       method: "GET",
@@ -35,7 +45,7 @@ $("document").ready(function(){
                                         let coinLogo = $('<img>');
                                         coinLogo.attr("src", imgURL);
                                         coinLogo.css("width", "50px")
-                                        $('.container').css("background-color", "#648fce")
+                                        $('.container').css("background-color", "rgb(113 162 234)")
                                     // if(coin[i].price_change_percentage_24h > 0){
                                     //       $('.container').css("background-color", "#1b661b")
                                     //       $('.container').css("color", "rgb(208 223 206)")
@@ -63,15 +73,19 @@ $("document").ready(function(){
 
                                     // let pp = formatter.format(coin[i].current_price)
                                     //     console.log(pp);
-
+                                        let marketCapp = coin[i].market_cap;
+                                        marketCapp = numFormatter(marketCapp);
+                                        let totalVolumee = coin[i].total_volume;
+                                        totalVolumee = numFormatter(totalVolumee);
+                                        
 
                                         $('#coin-prics').append($('<div>').text("Current Price: "));
                                         $('#coin-prics').append($('<div>').text(formatter.format(coin[i].current_price)));
-                                        $('#market-cap').append($('<div>').text("Market-cap: "));
-                                        $('#market-cap').append($('<div>').text(formatter.format(coin[i].market_cap)));
+                                        $('#market-cap').append($('<div>').text("Market Cap: "));
+                                        $('#market-cap').append($('<div>').text("$" + marketCapp));
                                         $('#max-supply').append($('<div>').text("Max-supply: " + coin[i].max_supply));
-                                        $('#total-val').append($('<div>').text("Total-val: "));
-                                        $('#total-val').append($('<div>').text(formatter.format(coin[i].total_volume)));
+                                        $('#total-val').append($('<div>').text("Total Valume: "));
+                                        $('#total-val').append($('<div>').text("$" + totalVolumee));
                                         $( "#coin-prics, #market-cap, #total-val" ).css( "border", "1px dashed #062e55" );
                                         valid = true;
                             
@@ -116,8 +130,12 @@ $("document").ready(function(){
 
                             i++;
                            // tabbleHTML = '<tr><th>'+"x"+'</th><th></th><th></th><th></th><th></th><th></th></tr>'
+                              let marketCapp = item.market_cap;
+                              marketCapp = numFormatter(marketCapp);
+                              let totalVolumee = item.total_volume;
+                              totalVolumee = numFormatter(totalVolumee);
                        
-                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td id="price24' + i + '">' + item.price_change_percentage_24h +'</td><td>' + formatter.format(item.total_volume) +'</td><td>' + formatter.format(item.market_cap) +'</td></tr>';
+                            tabbleHTML += '<tr><td>' + item.market_cap_rank +'</td><td><img src=' + item.image + ' class="coinImg">' + item.name + '</td><td>' + formatter.format(item.current_price) + '</td><td id="price24' + i + '">' + item.price_change_percentage_24h +'%</td><td>$' + totalVolumee +'</td><td>$' + marketCapp +'</td></tr>';
 
                             
                             if (i === 100) {
@@ -131,7 +149,8 @@ $("document").ready(function(){
                             console.log(response)
                             for(let i = 1; i < response.length + 1; i++){
                               price24El = document.getElementById("price24" + i)
-                              if(price24El.innerText > 0){
+                              // tempStr = tempStr.substring(0, 2);
+                              if(price24El.innerText.substring(0,3) > 0){
                                     price24El.style.color = "#5cc069";
                               } else {
                                     price24El.style.color = "#f56e6e";
