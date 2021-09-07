@@ -1,15 +1,5 @@
 $("document").ready(function(){
 
-      function numFormatter(num) {
-            if(num > 1000000 && num < 1000000000){
-                return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
-            } else if(num > 1000000000 && num < 1000000000000){
-                  return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 million 
-            } else if(num < 900000){
-                return num; // if value < 1000, nothing to do
-            }
-        }
-
     function initial(){   
           $("#icon").empty();
           $("#coin-logo").empty();
@@ -19,7 +9,20 @@ $("document").ready(function(){
           $("#max-supply").empty();
           $("#total-val").empty();
           $('#coin-24').empty();
+      //     $('.container').css("background-color", "#425b7f")
+      $('.container').css( "border", "none" );
+          $( "#coin-prics, #market-cap, #total-val" ).css( "border", "none" );
     }
+
+    function numFormatter(num) {
+      if(num > 1000000 && num < 1000000000){
+          return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+      } else if(num > 1000000000 && num < 1000000000000){
+            return (num/1000000000).toFixed(1) + 'B'; // convert to M for number from > 1 million 
+      } else if(num < 900000){
+          return num; // if value < 1000, nothing to do
+      }
+  }
 
     let coinName = "";
     document.getElementById("search-coin").addEventListener("click", function(e){
@@ -45,34 +48,23 @@ $("document").ready(function(){
                                         let coinLogo = $('<img>');
                                         coinLogo.attr("src", imgURL);
                                         coinLogo.css("width", "50px")
-                                        $('.container').css("background-color", "rgb(113 162 234)")
-                                    // if(coin[i].price_change_percentage_24h > 0){
-                                    //       $('.container').css("background-color", "#1b661b")
-                                    //       $('.container').css("color", "rgb(208 223 206)")
-                                    // } else {
-                                    //       $('.container').css("background-color", "#b22f3b")
-                                    //       $('.container').css("color", "rgb(229 203 208)")
-                                    // }
-                                        
+                                         $('.container').css("border", "0.5px solid rgb(90 91 93)");
                                         $('#coin-logo').append(coinLogo);
                                         $('#coin-logo').append(name); 
                                         
                                            if(coin[i].price_change_percentage_24h > 0){
                                           $('#coin-24').append(price_24 + "% ▲");
-                                          $('#coin-24').css("color", "rgb(42 254 70)")
+                                          $('#coin-24').css("color", "rgb(30 210 53)")
                                     } else {
                                           $('#coin-24').append(price_24 + "% ▼");
-                                          $('#coin-24').css("color", "rgb(194 0 0)")
+                                          $('#coin-24').css("color", "rgb(247 88 88)")
                                     }
 
                                     var formatter = new Intl.NumberFormat('en-US', {
                                           style: 'currency',
-                                          currency: 'USD',
-                                        
+                                          currency: 'USD',                                       
                                         });
 
-                                    // let pp = formatter.format(coin[i].current_price)
-                                    //     console.log(pp);
                                         let marketCapp = coin[i].market_cap;
                                         marketCapp = numFormatter(marketCapp);
                                         let totalVolumee = coin[i].total_volume;
@@ -86,7 +78,8 @@ $("document").ready(function(){
                                         $('#max-supply').append($('<div>').text("Max-supply: " + coin[i].max_supply));
                                         $('#total-val').append($('<div>').text("Total Valume: "));
                                         $('#total-val').append($('<div>').text("$" + totalVolumee));
-                                        $( "#coin-prics, #market-cap, #total-val" ).css( "border", "1px dashed #062e55" );
+                                        $( "#coin-prics, #market-cap, #total-val" ).css( "border", "0.5px solid rgb(90 91 93)" );
+                                        $( "#coin-prics, #market-cap, #total-val" ).css( "border-radius", "5px" );
                                         valid = true;
                             
                                   } else if(i == coin.length-1 && valid == false){
