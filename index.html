@@ -17,22 +17,25 @@
 </head>
 
 <body>
+
   <nav class="navbar">
-    <div class="container-fluid">
-      <a href="#" id="logo">coiNNect</a>
-    </div>
+      <div class="container-fluid">
+          <a href="#" id="logo">coiNNect</a>
+      </div>
   </nav>
+
   <div class="search-box">
     <form>
-    <input class="search-text" type="search" name="" placeholder="Ex Bitcoin, BTC" id="search-input">
-    <!-- <button class="search-btn" type="submit" id="search-coin"> -->  
-    <!-- </button> -->
-    <button class="search-btn" type="submit" id="search-coin" href="#">
-         <i class="fas fa-search" id="search-icon"></i>
-    </button>
-  </form>
-</div>
-    <div class="container">
+        <input class="search-text" type="search" name="" placeholder="Ex Bitcoin, BTC" id="search-input">
+        
+        <button class="search-btn" type="submit" id="search-coin" href="#">
+            <i class="fas fa-search" id="search-icon"></i>
+        </button>
+    </form>
+  </div>
+
+
+  <div class="container">
 
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
@@ -45,53 +48,57 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div id="coin-prics">
-            </div>
-        </div>
 
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div id="market-cap">
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-          <div id="total-val">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div id="coin-prics">
+              </div>
           </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div id="market-cap">
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div id="total-val">
+              </div>
+          </div>
+
         </div>
-      </div>
-    </div>
+
+  </div>
 
   <main>
+
     <div class="sort-option">
       <button class="sort-rank" id="coin_rank_btn"># ▲</button>
       <button class="sort-name" id="coin_name_btn">Coin ▲</button>
       <button class="sort-price" id="coin_price_btn">Price ▲</button>
       <button class="sort-24h" id="coin_24h_btn">24h ▲</button>
       <button class="sort-24h-Volume" id="coin_24h_volume_btn">24h Volume ▲</button>
-      <button class="sort-marketCap" id="coin_marketCap_btn">Market Cap ▲</button>
+      <button class="sort-marketCap" id="coin_marketCap_btn">M-Cap ▲</button>
     </div>
    
-    <section class="list">
-
-    </section>
+  
   </main>
-      <dive id="coinsListDiv">
+
+
+  <dive id="coinsListDiv">
         
           <table id="coinsListTable" class="coinTable">
-           
-        </table>
+           <tbody></tbody>
+          </table>
 
-      </dive>
+  </dive>
 
-      <footer>
-        <div class="footer-content">
+  <footer>
+     <div class="footer-content">
           <p>Designed by <a href="https://www.linkedin.com/in/shadihelwa/">Shadi</a> and <a href="https://www.linkedin.com/in/omar-dahmash/">Omar</a></p>
-            <p>copyright &copy;2021 coiNNect</p>
-        </div>
-    </footer>
+          <p>copyright &copy;2021 coiNNect</p>
+      </div>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" class=""></script>
-<script src="./script.js" type="text/javascript"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" class=""></script>
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
 </html>

@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,19 +9,19 @@ body {
   margin: 0;
   padding: 0;
   background: #1b1d20fc;
-  }
-  nav{
-    background-color: none;
-    font-family: 'Orbitron', sans-serif;
-    /* font-family: 'Cairo', sans-serif; */
-  }
-  #logo{
-    font-size: 35px;
-    text-decoration: none;
-    color: #949ea8;
-    margin-left: 7%;
-  }
-  .search-box{
+}
+nav {
+  background-color: none;
+  font-family: "Orbitron", sans-serif;
+  /* font-family: 'Cairo', sans-serif; */
+}
+#logo {
+  font-size: 35px;
+  text-decoration: none;
+  color: #949ea8;
+  /* margin-left: 7%; */
+}
+.search-box {
   position: absolute;
   z-index: 1;
   top: 200px;
@@ -29,23 +31,13 @@ body {
   height: 57px;
   border-radius: 40px;
   padding: 9px;
-  }
-  /* .search-box:hover > .search-btn{
-  background: #afcfff;
-  color: #1c355a;
+}
 
-  } */
-/* 
-  .search-box:hover > .search-text{
-  width: 240px;
-  padding: 0 6px;
-  } */
-
-input{
+input {
   background-color: #ede8e800 !important;
 }
 
-  .search-btn{
+.search-btn {
   color: #747070;
   float: right;
   width: 40px;
@@ -57,13 +49,9 @@ input{
   align-items: center;
   transition: 0.9s;
   border: 2px solid #747070;
-  }
+}
 
-  /* #search-icon{
-      width: 23px;
-      height: 23px;
-  } */
-  .search-text{
+.search-text {
   border: none;
   /* background: none; */
   outline: none;
@@ -76,49 +64,43 @@ input{
   font-size: 16px;
   transition: 0.9s;
   line-height: 40px;
-  }
-  /* #coin-logo{
-    margin-right: 0px;
-  } */
-  .container{
-    padding: 18px;
-    border-radius: 17px;
-    /* border: 2px; */
-    /* background-color: #648fce; */
-    /* border: dashed black; */
-    /* color: rgb(165, 216, 159); */
-    margin-top: 230px;
-    /* text-align: center; */
-    width: 53%;
-    color: #b5cce3;
-    font-family: 'Play', sans-serif;
-  }
-  #coin-logo{
-    /* border-right: solid black; */
-    /* border-right: solid rgb(202, 188, 188); */
-    margin-top: 5px;
-    font-size: 27px;
-    text-align: center;
-    /* margin-top: 3px; */
-  }
-  #coin-logo img{
-    width: 44px;
-    margin-right: 21px;
-    margin-top: 0px;
-    opacity: 0.85;
-  }
+}
 
-  #coin-24{
-    text-align: center;
-    font-size: 21px;
-    margin: 14px 0px 0px -160%;
-  }
+.container {
+  padding: 18px;
+  border-radius: 17px;
 
-  #coin-prics, #market-cap, #total-val{
-    font-size: 18px;
-    text-align: center;
-    margin-top: 36px;
-  }
+  margin-top: 230px;
+
+  width: 53%;
+  color: #b5cce3;
+  font-family: "Play", sans-serif;
+}
+#coin-logo {
+  margin-top: 5px;
+  font-size: 27px;
+  text-align: center;
+}
+#coin-logo img {
+  width: 44px;
+  margin-right: 21px;
+  margin-top: 0px;
+  opacity: 0.85;
+}
+
+#coin-24 {
+  text-align: center;
+  font-size: 21px;
+  margin: 14px 0px 0px -160%;
+}
+
+#coin-prics,
+#market-cap,
+#total-val {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 36px;
+}
 
 header h1 {
   color: #130101;
@@ -133,7 +115,7 @@ header h1 {
   display: flex;
   justify-content: stretch;
 
-  width: 100%;
+  width: min(90%, 70.5rem);
   max-width: 1100px;
 
   margin: 5% auto 0px;
@@ -141,58 +123,22 @@ header h1 {
 }
 
 main .sort-option button {
-  flex: 1 1 20%;
-  flex-basis: 10%;
+  flex: 1 1 5%;
+
   appearance: none;
   background-color: #1d1f22;
   border: 1px solid rgb(90 91 93);
   color: #d8dce2;
-  /* border: none; */
+
   border-radius: 8px;
   outline: none;
   padding: 15px 0px;
   margin: 0px 8px;
   cursor: pointer;
   text-align: center;
-
-  /* flex: 1 1 20%;
-  flex-basis: 10%;
-  appearance: none;
-  background-color: #6588bb;
-  color: #d8dce2;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  padding: 15px 0px;
-  margin: 0px 8px;
-  cursor: pointer;
-  text-align: center; */
-
-  /* position: sticky;
-  top: 30px; */
 }
-main .list-headers {
-  display: flex;
-  justify-content: space-between;
 
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 30px auto 0px;
-  padding: 0px 15px;
-
-  font-weight: 700;
-  text-transform: uppercase;
-}
-main .list {
-  /* display: block; */
-
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 0 auto;
-}
-main .list .list-item {
+main .list-item {
   display: flex;
   text-align: left;
 
@@ -208,34 +154,20 @@ main .list .list-item {
   border-radius: 8px;
 }
 
-.coinTable th {
-  position: sticky;
-  top: 0;
-  background-color: #c7afaf;
-}
-
 #coinsListDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
-  width: 100%;
+  width: min(90%, 70.5rem);
   max-width: 1100px;
 
   margin: 17px auto 0px;
 }
-/* main .list .list-item div:nth-child(2),
-main .list .list-item div:nth-child(3),
-main .list .list-item div:nth-child(3),
-main .list .list-item div:nth-child(4) {
-  flex: 1;
-} */
-/* .sort-rank {
-  padding: 0px 0px 30px 0px;
-  border: 1px solid #171717;
-} */
+
 .coinImg {
-  width: 28px;
-  padding: 5px;
+  width: 48px;
+  padding: 8px 10px;
 }
 th,
 td {
@@ -255,11 +187,7 @@ th {
   padding: 8px;
 }
 
-/* tr:nth-child(even) {
-  background-color: #dddddd;
-} */
-
-footer{
+footer {
   background-color: #000000b0;
   color: #747577;
   margin: 40px 0px -17px 0px;
@@ -271,17 +199,80 @@ footer a {
 }
 
 @media (max-width: 993px) {
-  #coin-24{
+  #coin-24 {
     margin: 23px 0px 0px 0px;
   }
 }
 @media (max-width: 610px) {
-  .search-btn{
+  .search-btn {
     margin-top: -41px;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .sort-option {
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /*  */
+  .coinImg {
+    width: 24px;
+    padding: 0px;
+    margin: -3px 10px 0px 0px;
+  }
 
-/* #price24{
-  color: red;
-} */
+  #coin_rank_btn {
+    display: none;
+  }
+  #coin_24h_volume_btn {
+    display: none;
+  }
+
+  #logo {
+    margin: auto;
+    text-align: center;
+  }
+  main .sort-option button {
+    padding: 5px;
+    margin: 0px 3px;
+  }
+  #coin_marketCap_btn {
+    content: "M-Cap ▲";
+  }
+  td {
+    display: block;
+  }
+  td:nth-child(6) {
+    margin-bottom: 10px;
+  }
+  td:first-child {
+    display: none;
+  }
+  td:nth-child(2) {
+    background-color: #ede8e814;
+    text-align: center;
+    font-weight: bold;
+  }
+  td:nth-child(3)::before {
+    content: "Price: ";
+  }
+  td:nth-child(5) {
+    display: none;
+  }
+  td:nth-child(4)::before {
+    content: "24H Change: ";
+  }
+
+  td:nth-child(6)::before {
+    content: "Market Cap: ";
+  }
+
+  td {
+    text-align: right;
+  }
+  td::before {
+    float: left;
+    font-weight: bold;
+  }
+}

@@ -250,9 +250,9 @@ $("document").ready(function(){
                       let coinArray = sort_array_by(response, 'market_cap', desc)
                       displayList(coinArray);
                       if(!desc){
-                            sort_marketCap_btn.innerText="Market Cap ▲";
+                            sort_marketCap_btn.innerText="M-Cap ▲";
                       }
-                      else {sort_marketCap_btn.innerText="Market Cap ▼";}
+                      else {sort_marketCap_btn.innerText="M-Cap ▼";}
 
                       desc =!desc;
                       
