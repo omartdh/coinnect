@@ -83,7 +83,7 @@ $("document").ready(function(){
                                         valid = true;
                             
                                   } else if(i == coin.length-1 && valid == false){
-                                         alert('Please enter a valid coin name')
+                                         alert('Your search did not match any results')
                                   }
                            }
                       }  

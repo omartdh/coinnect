@@ -10,16 +10,19 @@ body {
   padding: 0;
   background: #1b1d20fc;
 }
+.navbar {
+  margin-top: 1.8%;
+}
 nav {
   background-color: none;
   font-family: "Orbitron", sans-serif;
   /* font-family: 'Cairo', sans-serif; */
 }
 #logo {
-  font-size: 35px;
+  font-size: 40px;
   text-decoration: none;
   color: #949ea8;
-  /* margin-left: 7%; */
+  margin: auto;
 }
 .search-box {
   position: absolute;
@@ -113,13 +116,13 @@ header h1 {
 
 .sort-option {
   display: flex;
-  justify-content: stretch;
+  justify-content: space-around;
 
   width: min(90%, 70.5rem);
   max-width: 1100px;
 
   margin: 5% auto 0px;
-  position: sticky;
+  /* position: sticky; */
 }
 
 main .sort-option button {
@@ -169,6 +172,12 @@ main .list-item {
   width: 48px;
   padding: 8px 10px;
 }
+.sort:hover,
+.sort:focus {
+  /* text-decoration: underline rgb(240, 230, 230); */
+  background-color: #ede8e814;
+}
+
 th,
 td {
   padding: 15px;
@@ -204,16 +213,24 @@ footer a {
   }
 }
 @media (max-width: 610px) {
+  .container {
+    width: 80%;
+    margin-bottom: 57px;
+    margin-top: 176px;
+  }
   .search-btn {
     margin-top: -41px;
   }
+  .search-box {
+    top: 157px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .sort-option {
     max-width: 350px;
   }
-}
+} */
 @media screen and (max-width: 600px) {
   /*  */
   .coinImg {
@@ -229,10 +246,6 @@ footer a {
     display: none;
   }
 
-  #logo {
-    margin: auto;
-    text-align: center;
-  }
   main .sort-option button {
     padding: 5px;
     margin: 0px 3px;
