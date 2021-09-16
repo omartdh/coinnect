@@ -1,6 +1,10 @@
 $("document").ready(function(){
 
-    function initial(){   
+    
+
+    
+    
+      function initial(){   
           $("#icon").empty();
           $("#coin-logo").empty();
           $("#coin-name").empty();
@@ -83,7 +87,7 @@ $("document").ready(function(){
                                         valid = true;
                             
                                   } else if(i == coin.length-1 && valid == false){
-                                         alert('Your search did not match any results')
+                                         alert('Your search did not match any results!')
                                   }
                            }
                       }  
@@ -281,6 +285,10 @@ $("document").ready(function(){
           }
 
     });
-
+    document.getElementById("moodToggle").addEventListener
+    ("click", function(){
+        document.getElementsByTagName("body")[0].classList.toggle("dark-theme");
+    });
+        
 
 })
